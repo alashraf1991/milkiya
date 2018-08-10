@@ -1,0 +1,172 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="Ribat_Milkiya.Site" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <!-- owl-carousel css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="contents/font-awesome.min.css">
+    <link rel="stylesheet" href="contents/settings.css">
+    <link rel="stylesheet" href="contents/owl.carousel.css">
+    <link rel="stylesheet" href="contents/owl.theme.css">
+
+    <link href="contents/responsive.css" rel="stylesheet" />
+    <link href="contents/gradient.css" rel="stylesheet" />
+    <link href="contents/Style.css" rel="stylesheet" />
+    <link href="contents/datepicker.css" rel="stylesheet" />
+
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500italic,500,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,300,600,700,800,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic,800,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+<body class="home portfolio2">
+
+    <header>
+        <div class="bottom_header top-bar-gradient">
+            <div class="container clear_fix">
+                <div class="float_right logo">
+                    <a href="/Home" title="الصفحة الرئيسة">
+                        <img src="contents/img/Logo.png" alt="Me Finance">
+                    </a>
+                </div>
+                <div class="float_left address">
+                    <div class="top-info">
+                        <div class="icon-box">
+                            <span class="glyphicon glyphicon-map-marker"></span>
+                        </div>
+                        <div class="content-box">
+                            <a href="#" target="_blank"><p> الخرطوم - المقرن <br><span>جوار البنك الزراعي</span></p></a>
+                        </div>
+                    </div>
+                    <div class="top-info">
+                        <div class="icon-box">
+                            <span class="glyphicon glyphicon-earphone"></span>
+                        </div>
+                        <div class="content-box">
+                            <p>
+                                <a href="tel:00966114792122" dir="ltr">00249-83-742358 </a><br>
+                                <a href="mailto:info@ipsudan.gov.sd">info@ipsudan.gov.sd</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="top-info">
+                        <div class="icon-box">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </div>
+                        <div class="content-box">
+                            <p>الأحد - الخميس <br><span> 7:00 - 15:30</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end container -->
+        </div>
+    </header>
+
+
+    <section class="mainmenu-area stricky">
+        <div class="container">
+            <nav class="clearfix">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header clearfix">
+                    <button type="button" class="navbar-toggle collapsed">
+                        <span class="sr-only">القائمة</span>
+                        <span class="fa fa-bars"></span>
+                    </button>
+                </div>
+                <div class="nav_main_list custom-scroll-bar pull-right" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav" id="hover_slip">
+                        <asp:Literal ID="ltrMenu" runat="server"></asp:Literal>
+                        <li><a href="#" class="contact">اتصل بنا</a></li>                        
+                        <li><a href="/Home/About">عن الإدارة</a></li>
+                        <li><a href="default.aspx">الرئيسية</a></li>
+
+                        
+
+                    </ul>
+                </div>
+                <div class="find-advisor pull-left">
+                    <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>                    
+                </div>
+                
+            </nav> <!-- End Nav -->
+        </div> <!-- End Container -->
+    </section>
+
+    <div class="body-content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+        </asp:ContentPlaceHolder>
+        <hr />
+    </div>
+
+    <section class="container-fluid consultation">
+        <div class="container text-center">
+        </div>
+    </section>
+    
+    <footer>
+        <div class="top_footer container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 part2">
+                        <h5>خريطة الموقع</h5>
+                        <ul class="p0">
+                            <li><a href="#"><i class="glyphicon glyphicon-chevron-left"></i>&nbsp;&nbsp;الرئيسية</a></li>                                                        
+                            <li><a href="#"><i class="glyphicon glyphicon-chevron-left"></i>&nbsp;&nbsp;من نحن</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-chevron-left"></i>&nbsp;&nbsp;تسجيل الدخول</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 part1">
+                        <h5>اتصل بنا</h5>
+                        <p style="text-align:right"><i class="glyphicon glyphicon-phone"></i>&nbsp;&nbsp; <span dir="ltr"><a href="tel:00966114792122">00249-83-742358</a></span></p>
+                        <p style="text-align:right"><i class="glyphicon glyphicon-envelope"></i>&nbsp;&nbsp; <a href="mailto:info@ipsudan.gov.sd">info@ipsudan.gov.sd</a></p>
+                    </div>                   
+
+                </div> <!-- End row -->
+            </div>
+        </div> <!-- End top_footer -->
+        <div class="bottom_footer container-fluid">
+            <div class="container">
+                <p class="float_right">Copyright ©  2018. </p>
+                <p class="float_left">Created by: <a href="#" target="_blank">National Ribat University - Manshiya Branch</a></p>
+            </div>
+        </div> <!-- End bottom_footer -->
+    </footer>
+
+    <script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/owl.carousel.js"></script>
+    <script type="text/javascript" src="scripts/owl-custom.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+    <script type="text/javascript" src="scripts/revolution.extension.carousel.min.js"></script>
+    <script type="text/javascript" src="scripts/datepicker.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#logOff").on("click", function () {
+
+                    $.ajax({
+                        type: "POST",
+                        url: "data.aspx",
+                        data: {                           
+                            Operation: "logOff"
+                        },
+                        success: function (result) {
+                            window.location.href = "default.aspx";
+                        }
+                    });
+            });
+
+        });
+    </script>
+</body>  
+
+</html>
+
