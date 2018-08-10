@@ -2,6 +2,7 @@
 Imports Ribat_Milkiya.kSQL
 
 Public Class data
+
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -17,7 +18,6 @@ Public Class data
             Using msql As New kSQL(strConn)
                 Dim a = msql.SorguCalistir(cmd)
             End Using
-
             Response.Write("done")
         ElseIf Request.Form("Operation") = "saveClient" Then
             saveClient()
