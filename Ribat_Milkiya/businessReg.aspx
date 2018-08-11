@@ -88,9 +88,9 @@
 
                                 <label for="sel1">مدة التجديد</label>
                                 <select class="form-control" id="sel1">
-                                    <option>سنه</option>
-                                    <option>3 سنوات</option>
-                                    <option>5 سنوات</option>
+                                    <option value="1">سنه</option>
+                                    <option value="3">3 سنوات</option>
+                                    <option value="5">5 سنوات</option>
                                 </select>
 
 
@@ -186,6 +186,7 @@
                         </thead>
 
                         <tbody>
+                            <asp:Literal ID="ltrBussiness" runat="server"></asp:Literal>
                         </tbody>
                     </table>
                 </div>
@@ -204,24 +205,14 @@
 
                 selectedID = $(this).data("id");
                 $("#CLIENTID").val($(this).data("name"));
+
+                $("#myModal").modal('hide');
             });
 
 
             $(".new_reg").css("display", "none");
 
-            getBusinessList();
-            function getBusinessList() {
-                $.ajax({
-                    type: "POST",
-                    url: "data.aspx",
-                    data: {
-                        Operation: "getBusinessList"
-                    },
-                    success: function (result) {
-                        $("#tblBusiness tbody").html(result);
-                    }
-                });
-            }
+                      
 
             $("#btnNewReg").on("click", function () {
                 $(".new_reg").css("display", "");
@@ -269,7 +260,7 @@
                             if (result == "yes") {
                                 $("#msg").html("تم الحفظ بنجاح");
                                 $("#msg").css("color", "lime");
-                                getBusinessList();
+                                location.reload();
                                 $(".new_reg").css("display", "none");
 
                                 $("#DCR_NAME").val("");
@@ -289,12 +280,40 @@
 
 
             $(".btnSelectBusiness").on("click", function () {
-                var dcrNo = $(this).children('td').eq(0);
-                var dcrName = $(this).children('td').eq(0);
+                var dcrNo = $(this).data("id");
+                var dcrName = $(this).data("name");
 
                 $("#DCRNO").val(dcrNo);
                 $("#DCRNAME").val(dcrName);
 
+            });
+
+            $("#btnRenew").on("click", function () {
+
+                var renw_text = $('#sel1').find(":selected").text();
+                var years = $('#sel1').find(":selected").val();
+
+                if (confirm('Will be renewed for' + renw_text + 'years. Confirm?')) {
+                    $.ajax({
+                        type: "POST",
+                        url: "data.aspx",
+                        data: {                          
+                            DCRNO: $("#DCRNO").val(),
+                            years:years,
+                            Operation: "Renew"
+                        },
+                        success: function (result) {
+                            if (result == "yes") {
+                                $("#renew").modal("hide");
+                                location.reload();
+
+                            } else {
+                                $("#msg").html("حدث خطأ الرجاء المحاولة لاحقاً!");
+                                $("#msg").css("color", "salmon");
+                            }
+                        }
+                    });
+                }
             });
 
         });

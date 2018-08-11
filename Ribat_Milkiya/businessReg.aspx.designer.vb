@@ -21,4 +21,13 @@ Partial Public Class businessReg
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ltrClients As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''ltrBussiness control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ltrBussiness As Global.System.Web.UI.WebControls.Literal
 End Class

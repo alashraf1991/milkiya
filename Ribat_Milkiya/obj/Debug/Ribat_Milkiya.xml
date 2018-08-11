@@ -15,6 +15,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:Ribat_Milkiya.businessReg._ltrBussiness">
+<summary>
+ltrBussiness control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="T:Ribat_Milkiya.My.MyWebExtension">
  <summary>
  Module used to define the properties that are available in the My Namespace for Web projects.
